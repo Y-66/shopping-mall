@@ -5,6 +5,7 @@ import com.hmall.common.utils.CollUtils;
 import com.hmall.gateway.config.AuthProperties;
 import com.hmall.gateway.utils.JwtTool;
 import lombok.RequiredArgsConstructor;
+import lombok.val;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -56,9 +57,13 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
         }
 
         // TODO 5.如果有效，传递用户信息
-        System.out.println("userId = " + userId);
+        //System.out.println("userId = " + userId);
+        String userInfo = userId.toString();
+        ServerWebExchange swe = exchange.mutate()
+                .request(builder -> builder.header("user-info", userInfo))
+                .build();
         // 6.放行
-        return chain.filter(exchange);
+        return chain.filter(swe);
     }
 
     private boolean isExclude(String antPath) {
