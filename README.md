@@ -1,46 +1,40 @@
 # shopping-mall
 
+## Introduction
 
+Spring Cloud + Spring Security + Spring Boot + MyBatis + Nacos + MySQL
 
-## 介绍
+## Software Architecture
 
-Spring Cloud + Spring Secuity + Spring Boot + MyBatis + Nacos + MySQL 
+Microservices architecture
 
+**Implemented:**
 
+- Service decomposition
+- Remote calls (OpenFeign)
+- Service governance (Nacos)
+- Request routing (Gateway)
+- Authentication & authorization (Spring Security)
+- Configuration management (Nacos)
 
-## 软件架构
+**Not Implemented Yet:**
 
-微服务
+- Service protection (Sentinel)
+- Distributed transactions (Seata)
+- Asynchronous communication (RabbitMQ)
+- Message reliability (RabbitMQ)
+- Delayed messages (RabbitMQ)
+- Distributed search (ElasticSearch)
+- Inverted index (ElasticSearch)
+- Data aggregation (ElasticSearch)
 
-**已实现：**
+## Environment Setup
 
-- 服务拆分
-- 远程调用 (OpenFeign)
-- 服务治理 (nacos)
-- 请求路由 (gateway)
-- 身份认证 (Spring Security)
-- 配置管理 (nacos)
-
-**未实现：**
-
-- 服务保护 (Sentinel)
-- 分布式事务 (Seata)
-- 异步通信 (RabbitMQ)
-- 消息可靠性 (RabbitMQ)
-- 延迟消息 (RabbitMQ)
-- 分布式搜索 (ElasticSearch)
-- 倒排索引 (ElasticSearch)
-- 数据聚合 (ElasticSearch)
-
-
-
-## 环境配置
-
-- JDK：17
-- maven：3.9.10
-- 虚拟机：CenOS7 （利用docker部署下述服务）
-  - mysql：8.0.27
-  - nacos：v2.1.0-slim
+- JDK: 17  
+- Maven: 3.9.10  
+- Virtual Machine: CentOS 7 (services below are deployed using Docker)
+  - MySQL: 8.0.27  
+  - Nacos: v2.1.0-slim  
 
 ## 使用教程
 
